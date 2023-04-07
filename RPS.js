@@ -1,7 +1,6 @@
 // function to return Computer's choice (random) of Rock, Paper or Scissors (RPS)
 function getComputerChoice(){
     let randNum = Math.ceil(Math.random() * 3);
-    //console.log(randNum);
     let compChoice = "";
     if (randNum === 1) {
         compChoice = "ROCK"
@@ -10,19 +9,15 @@ function getComputerChoice(){
     } else {
         compChoice = "PAPER"
     }
-    //console.log("Comp choice: " + compChoice);
     return compChoice;
 }
 
 // function to return User's choice of Rock, Paper or Scissors (RPS) via prompt
 function getUserChoice(){
     let userChoice = prompt("What do you choose: Rock, Paper or Scissors?").toUpperCase();
-    //console.log("First Input: " + userChoice);
     while ((userChoice !== "ROCK") && (userChoice !== "PAPER") && (userChoice !== "SCISSOR")) {
         userChoice = prompt("Incorrect input, please choose: Rock, Paper or Scissors!").toUpperCase();
-        //console.log("Other Input: " + userChoice);
     }
-    //console.log("You're free with user input: " + userChoice);
     return userChoice;
 }
 // function to play single round of RPS, taking user and computer input, 
@@ -30,9 +25,7 @@ function getUserChoice(){
 // Note: Make user input parameter case-insensitive.
 function playRound(humanInput="error", computerInput="error"){
     let user = humanInput;
-    //console.log("User input is "+ user);
-    let comp = computerInput;
-    //console.log("Computer input is "+ comp);
+    let comp = computerInput;;
     let result = "";
     //win message + count
     function userWin(){
@@ -45,6 +38,7 @@ function playRound(humanInput="error", computerInput="error"){
         compWinCount = compWinCount+1;
     }
 
+    //determine and report winner to console
     if (user===comp) {
         result = "It's a TIE! Go again!";
         tieCount = tieCount + 1;
